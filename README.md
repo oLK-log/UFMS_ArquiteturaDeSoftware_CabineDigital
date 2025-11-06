@@ -11,29 +11,35 @@ Diagramas e artefatos de modelagem do sistema "Cabine Digital UFMS" realizados a
 
  
 ### Modelagem:
- * #### **Modelo Conceitual**
+ * #### **Diagrama Conceitual**
  <!--* ![imagem modelo conceitual EER](./ERR.drawio.png);-->
 <div align="center">
-  <img src="./AgenciaTurismoWhite.drawio.png" alt="imagem modelo conceitual" width="700"/>
+  <img src="./diagramas/D_Conceitual/Lorran_diagramaConceitualReenvio.jpg" alt="imagem diagrama conceitual" width="700"/>
 </div>
-<!--
-* #### **Modelo Lógico**
+
+* #### **Diagrama Classes de Entidade**
  <!--* ![imagem modelo conceitual EER](./ERR.drawio.png);-->
- <!--
 <div align="center">
-  <img src="modeloLogicoVisual.png" alt="imagem modelo lógico" width="700"/>
+  <img src="./diagramas/D_ClassesDeEntidade/GrupoP_DriagramaEntidade_R.jpg" alt="imagem diagrama Classes de Entidade" width="700"/>
 </div>
-<!--
-* #### **Modelo Físico**
-  - [Documento Script SQL](./universidade.sql)
- -->
+
+### **C4**
+* #### **Diagrama Contexto**
+<div align="center">
+  <img src="./diagramas/C4/GrupoP_diagramaContexto.png" alt="imagem diagrama Classes de Entidade" width="700"/>
+</div>
+  <!-- [Documento Script SQL](./universidade.sql) -->
+  
+* #### **Diagrama Container**
+<div align="center">
+  <img src="./diagramas/C4/GrupoP_diagramaContainer.png" alt="imagem diagrama Classes de Entidade" width="700"/>
+</div>
+  
 ⚠ **Atenção**: Material com fins de aprendizado, e assim sendo, pode conter **erros** e **insconsistências**.
 
 * ### **Links e material de apoio** 📖
- - [Curso Banco de Dados - Metropole Digital]([./universidade.sql](https://materialpublic.imd.ufrn.br/curso/disciplina/3/73/8/6))
- - [Tipos de dados MySQL](https://pt.myservername.com/mysql-data-types-what-are-different-data-types-mysql#goog_rewarded)
- - **WELLING**, Luke; **THOMSON**, Laura. **PHP e MySQL: Desenvolvimento Web**. 5. ed. Rio de Janeiro: Campus/Elsevier, 2010.
-
+ - [Modelo Conceitual](https://fernandommota.github.io/academy/disciplines/2015/analise_projeto_software/files/08_modelo_conceitual.pdf)
+ - [Diagrama de Classes](https://deinf.ufma.br/~geraldo/dob/7.Classes.pdf)
  
     
 
