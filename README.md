@@ -5,7 +5,8 @@ Diagramas e artefatos de modelagem do sistema "Cabine Digital UFMS" realizados a
 * **Curso:** Engenharia de Software
 * **Ferramentas:**
   - Astah
-  - draw.io;
+  - draw.io
+  - Structurizr
  
 ### Descrição:
 
@@ -26,13 +27,18 @@ Diagramas e artefatos de modelagem do sistema "Cabine Digital UFMS" realizados a
 ### **C4**
 * #### **Diagrama Contexto**
 <div align="center">
-  <img src="./diagramas/C4/GrupoP_diagramaContexto.png" alt="imagem diagrama Classes de Entidade" width="700"/>
+  <img src="./diagramas/C4/nivel1_diagramaContexto/reenvio/diagramaContexto_reenvio.png" alt="imagem diagrama Classes de Entidade" width="700"/>
 </div>
   <!-- [Documento Script SQL](./universidade.sql) -->
   
 * #### **Diagrama Container**
 <div align="center">
-  <img src="./diagramas/C4/GrupoP_diagramaContainer.png" alt="imagem diagrama Classes de Entidade" width="700"/>
+  <img src="./diagramas/C4/nivel2_diagramaContainer/reenvio/diagramaContainer_reenvio.png" alt="imagem diagrama Classes de Entidade" width="700"/>
+</div>
+
+* #### **Diagrama Implantação**
+<div align="center">
+  <img src="./diagramas/C4/nivel3_implantacao/diagramaImplantacao.png" alt="imagem diagrama Classes de Entidade" width="500"/>
 </div>
   
 ⚠ **Atenção**: Material com fins de aprendizado, e assim sendo, pode conter **erros** e **insconsistências**.
@@ -40,6 +46,7 @@ Diagramas e artefatos de modelagem do sistema "Cabine Digital UFMS" realizados a
 * ### **Links e material de apoio** 📖
  - [Modelo Conceitual](https://fernandommota.github.io/academy/disciplines/2015/analise_projeto_software/files/08_modelo_conceitual.pdf)
  - [Diagrama de Classes](https://deinf.ufma.br/~geraldo/dob/7.Classes.pdf)
+ - [C4 Model](https://medium.com/cajudevs/entendendo-o-c4-model-uma-abordagem-para-arquitetura-de-software-3ed0f007ae66)
  
     
 
