@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)https://structurizr.com/dsl -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="error_marker.css">    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }
+/*# sourceURL=ace/css/error_marker.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style>
+    <title>Structurizr - DSL</title>
+
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Visualise, document and explore your software architecture with Structurizr">
+    <meta name="keywords" content="software architecture, software architecture diagrams, c4 model">
+
+    <link rel="icon" href="https://static.structurizr.com/img/favicon.png">
+    <link rel="apple-touch-icon" href="https://static.structurizr.com/img/apple-touch-icon.png">
+
+    
+
+    <link href="./implantacao_Structurizr - DSL_files/bootstrap-3.3.7.min.css" rel="stylesheet" media="screen">
+    <link href="./implantacao_Structurizr - DSL_files/bootstrap-theme-3.3.7.min.css" rel="stylesheet" media="screen">
+    <link href="./implantacao_Structurizr - DSL_files/structurizr.css" rel="stylesheet" media="screen">
+    
+    <link href="./implantacao_Structurizr - DSL_files/structurizr-print.css" rel="stylesheet" media="print">
+    <link href="./implantacao_Structurizr - DSL_files/open-sans.css" rel="stylesheet">
+
+    <script src="./implantacao_Structurizr - DSL_files/jquery-3.6.3.min.js.baixados"></script>
+    <script src="./implantacao_Structurizr - DSL_files/bootstrap-3.3.7.min.js.baixados"></script>
+    <script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-2025.11.04.js.baixados"></script>
+    <script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-ui-2025.11.04.js.baixados"></script>
+    <script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-util-2025.11.04.js.baixados"></script>
+
+    
+<script nonce="">
+    structurizr.ui.initDarkMode('https://static.structurizr.com/css/structurizr-dark.css');
+</script><link rel="stylesheet" type="text/css" href="./implantacao_Structurizr - DSL_files/structurizr-dark.css"><script src="./implantacao_Structurizr - DSL_files/mode-structurizr.js.baixados"></script></head>
+
+
+
+<body>
+    
+    
+    
+    
+    
+
+    <div id="content">
+<script src="./implantacao_Structurizr - DSL_files/crypto-js-4.1.1.min.js.baixados"></script>
+
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-client-2025.11.04.js.baixados"></script>
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-workspace-2025.11.04.js.baixados"></script>
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-encryption-2025.11.04.js.baixados"></script>
+
+<script nonce="">
+    function loadWorkspace(json) {
+        try {
+            if (typeof beforeWorkspaceLoaded === 'function') {
+                beforeWorkspaceLoaded(json);
+            }
+
+            structurizr.workspace = new structurizr.Workspace(json);
+            workspaceLoaded();
+
+            if (typeof afterWorkspaceLoaded === 'function') {
+                afterWorkspaceLoaded(structurizr.workspace.getJson());
+                $(window).trigger('resize');
+            }
+        } catch (err) {
+            if (window.logError) {
+                logError('Error loading workspace', window.href, 1, err);
+            }
+            console.log(err);
+
+            if (progressMessage !== undefined) {
+                progressMessage.show('There is a problem loading your workspace - ' + err);
+            }
+        }
+    }
+
+    function loadWorkspaceFromParent() {
+        structurizr.workspace = parent.structurizr.workspace;
+
+        try {
+            if (typeof beforeWorkspaceLoaded === 'function') {
+                beforeWorkspaceLoaded(structurizr.workspace.getJson());
+            }
+
+            workspaceLoaded();
+
+            if (typeof afterWorkspaceLoaded === 'function') {
+                afterWorkspaceLoaded(structurizr.workspace.getJson());
+                $(window).trigger('resize');
+            }
+        } catch (err) {
+            logError('Error loading workspace', window.href, 1, err);
+            console.log(err);
+
+            if (progressMessage !== undefined) {
+                progressMessage.show('There is a problem loading your workspace - ' + err);
+            }
+        }
+    }
+</script>
+
+<div class="modal fade" id="clientSideEncryptedWorkspacePassphraseModal" tabindex="-1" role="dialog" aria-labelledby="keyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+               <h2 class="modal-title">Client-side encrypted workspace</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    The workspace "<span id="clientSideEncryptedWorkspacePassphraseModalName"></span>" has been client-side encrypted, please enter the passphrase to decrypt it.
+                </p>
+
+                <div class="form-group">
+                    <input id="passphrase" type="password" class="form-control" placeholder="Passphrase" required="true">
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="storePassphraseInLocalStorage" type="checkbox"> Save passphrase in browser local storage
+                    </label>
+                </div>
+
+                <div id="decryptionAlert" class="alert alert-danger" role="alert" style="display:none">
+                    The workspace could not be decrypted.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="decryptButton" type="button" class="btn btn-primary">Decrypt</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="">
+    function showPassphraseModalAndDecryptWorkspace(workspace, callback) {
+        var modal = $('#clientSideEncryptedWorkspacePassphraseModal');
+        var workspaceName = $('#clientSideEncryptedWorkspacePassphraseModalName');
+        workspaceName.append(workspace.name);
+
+        modal.on('shown.bs.modal', function (e) {
+            $('#passphrase').focus();
+        });
+
+        modal.find('#decryptButton').click(function () {
+            promptForPassphraseAndDecryptWorkspace(workspace, callback);
+        });
+
+        modal.find('#passphrase').keydown(function(evt) {
+            if (evt.keyCode === 13) { // the enter key
+                promptForPassphraseAndDecryptWorkspace(workspace, callback);
+            }
+        });
+
+        var passphrase = getWorkspaceEncryptionPassphraseFromLocalStorage(workspace.id);
+        if (passphrase) {
+            decryptWorkspace(workspace, passphrase, callback);
+        } else {
+            modal.modal({ keyboard: false });
+        }
+    }
+
+    function promptForPassphraseAndDecryptWorkspace(workspace, callback) {
+        var modal = $('#clientSideEncryptedWorkspacePassphraseModal');
+        var passphrase = modal.find('#passphrase').val();
+        var storePassphrase = modal.find('#storePassphraseInLocalStorage')[0].checked;
+        if (storePassphrase === true) {
+            putWorkspaceEncryptionPassphraseInLocalStorage(workspace.id, passphrase);
+        }
+
+        decryptWorkspace(workspace, passphrase, callback);
+    }
+
+    function decryptWorkspace(workspace, passphrase, callback) {
+        var modal = $('#clientSideEncryptedWorkspacePassphraseModal');
+
+        try {
+            structurizrEncryptionStrategy = new structurizr.io.EncryptionStrategy(
+                {
+                    iterationCount: workspace.encryptionStrategy.iterationCount,
+                    iv: workspace.encryptionStrategy.iv,
+                    keySize: workspace.encryptionStrategy.keySize,
+                    location: 'Client',
+                    salt: workspace.encryptionStrategy.salt,
+                    type: workspace.encryptionStrategy.type,
+                    passphrase: passphrase
+                }
+            );
+
+            var decryptedWorkspace = structurizrEncryptionStrategy.decrypt(workspace);
+
+            modal.modal('hide');
+            callback(decryptedWorkspace);
+        } catch (e) {
+            console.error("Could not decrypt the workspace with the given passphrase");
+            removeWorkspaceEncryptionPassphraseFromLocalStorage(workspace.id);
+
+            modal.find('#decryptionAlert').show();
+        }
+    }
+
+    function getWorkspaceEncryptionPassphraseFromLocalStorage(id) {
+        return localStorage.getItem("workspace/" + id + "/passphrase");
+    }
+
+    function removeWorkspaceEncryptionPassphraseFromLocalStorage(id) {
+        return localStorage.removeItem("workspace/" + id + "/passphrase");
+    }
+
+    function putWorkspaceEncryptionPassphraseInLocalStorage(id, passphrase) {
+        return localStorage.setItem("workspace/" + id + "/passphrase", passphrase);
+    }
+</script>
+
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-embed.js.baixados"></script>
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/ace-1.5.0.min.js.baixados" charset="utf-8"></script>
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/ad.js.baixados"></script>
+
+<script nonce="">
+    function runGraphvizForView(view, callback) {
+        if (view.automaticLayout.applied !== true) {
+            const url = 'https://graphviz.structurizr.com?view=' + view.key;
+            runGraphviz(url, function() {
+                view.automaticLayout.applied = true;
+                callback();
+            });
+        } else {
+            if (callback) {
+                callback();
+            }
+        }
+    }
+
+    function runGraphvizWithParameters(rankDirection, rankSeparation, nodeSeparation, edgeSeparation, linkVertices, margin, resize, callback) {
+        const view = structurizr.diagram.getCurrentView();
+        const url = 'https://graphviz.structurizr.com?view=' + view.key + '&resizePaper=' + resize + '&rankDirection=' + rankDirection + '&rankSeparation=' + rankSeparation + '&nodeSeparation=' + nodeSeparation + '&margin=' + margin
+
+        runGraphviz(url, callback);
+    }
+
+    function runGraphviz(url, callback) {
+        if (false === true) {
+            console.log('Graphviz cannot be used on client-side encrypted workspaces - skipping');
+            if (callback) {
+                callback();
+            }
+        } else {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                contentType: 'application/json; charset=UTF-8',
+                cache: false,
+                headers: {
+                    'Content-Type': 'application/json; charset=UTF-8'
+                },
+                dataType: 'json',
+                data: getMinimalJson()
+            })
+            .done(function (data, textStatus, jqXHR) {
+                if (data.views) {
+                    structurizr.workspace.copyLayoutFrom(data.views);
+                }
+                if (callback) {
+                    callback();
+                }
+            })
+            .fail(function (jqXHR, textStatus, errorThrown) {
+                progressMessage.hide();
+
+                console.log('Automatic layout failed');
+                logError(jqXHR, textStatus, errorThrown);
+            });
+        }
+    }
+
+    function getMinimalJson() {
+        const workspace = structurizr.workspace.getJson();
+
+        if (workspace.properties) {
+            delete workspace.properties['structurizr.dsl'];
+        }
+        delete workspace.documentation;
+
+        if (workspace.model.softwareSystems) {
+            workspace.model.softwareSystems.forEach(function (softwareSystem) {
+                delete softwareSystem.documentation;
+
+                if (softwareSystem.containers) {
+                    softwareSystem.containers.forEach(function (container) {
+                        delete container.documentation;
+                    });
+                }
+            });
+        }
+
+        // and copy across the current layout information
+        workspace.views = structurizr.workspace.views;
+
+        return JSON.stringify(workspace, null, '    ');
+    }
+</script>
+<style>
+    #tooltip {
+        font-size: 14px;
+        color: #000000;
+        background: #eeeeee;
+        padding: 10px;
+        margin: 20px;
+        position: absolute;
+        z-index: 10;
+        opacity: 0.98;
+        border: 2px #666666 solid;
+        border-radius: 5px;
+        width: 33%;
+        max-width: 33%;
+        overflow: hidden;
+    }
+    #tooltipName {
+        font-size: 20px;
+        font-weight: normal;
+    }
+    #tooltipParent {
+        font-size: 8px;
+    }
+    #tooltipMetadata {
+        font-size: 10px;
+    }
+    #tooltipType {
+        font-size: 10px;
+    }
+    #tooltipDescription {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+    #tooltipTags {
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    #tooltipProperties {
+        margin-top: 15px;
+        font-size: 10px;
+    }
+    #tooltipUrl {
+        margin-top: 10px;
+        font-size: 10px;
+    }
+    #tooltip .tag {
+        border-width: 1px;
+        border-style: solid;
+        padding: 3px 3px 3px 3px;
+        margin: 3px 3px 3px 0;
+        border-radius: 6px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+</style>
+
+<style media="print">
+    #tooltip {
+        display: none;
+    }
+</style>
+
+<div id="tooltip" class="hidden">
+    <div id="tooltipHeader">
+        <div id="tooltipName"></div>
+        <div id="tooltipParent"></div>
+        <div id="tooltipMetadata"></div>
+        <div id="tooltipDescription"></div>
+        <hr>
+    </div>
+    <div id="tooltipTags"></div>
+    <div id="tooltipProperties"></div>
+    <div id="tooltipUrl"></div>
+    <div id="tooltipAdditionalContent"></div>
+</div>
+
+<script type="text/javascript" src="./implantacao_Structurizr - DSL_files/structurizr-tooltip-2025.11.04.js.baixados"></script>
+<div id="progressMessage" class="structurizrBackgroundBase hidden"><p>Loading workspace...</p></div>
+
+<script nonce="">
+    structurizr.ui.ProgressMessage = class ProgressMessage {
+
+        #progressMessage = $('#progressMessage');
+
+        show(html) {
+            this.#progressMessage.html(html);
+            this.#progressMessage.removeClass('hidden');
+        }
+
+        hide() {
+            this.#progressMessage.addClass('hidden');
+        }
+    }
+
+    const progressMessage = new structurizr.ui.ProgressMessage();
+</script>
+<style>
+    .ace_structurizr_keyword {
+        color: #1168BD;
+    }
+
+    .ace_structurizr_keyword_disabled {
+        color: #cccccc;
+    }
+
+    .ace_structurizr_variable {
+        color: #772222;
+    }
+
+    .ace_structurizr_string {
+        color: #555555;
+    }
+
+    .ace_structurizr_comment {
+        color: #999999;
+    }
+
+    .ace_structurizr_default {
+        color: #777777;
+    }
+
+    .ace_structurizr_brace {
+        color: #1168BD;
+    }
+
+    .ace_structurizr_constant {
+        color: #00aa00;
+    }
+
+    .ace_structurizr_whitespace {
+    }
+</style>
+
+<div class="modal fade" id="dslEditorIntroductionModal" tabindex="-1" role="dialog" aria-labelledby="dslEditorIntroductionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h2 class="modal-title">DSL editor</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    This browser-based DSL editor provides some rudimentary syntax highlighting and the ability to use the DSL without installing any tooling,
+                    but <b>it does not provide access to the full feature set of the DSL</b>.
+                    We recommend using the DSL in conjunction with Structurizr Lite or the Structurizr CLI instead.
+                    See <a href="https://structurizr.com/help/dsl" target="_blank">Help - DSL</a> for more details.
+                </p>
+
+                <div class="row">
+                    <div class="col-sm-4 centered small">
+                        <h3>Structurizr Lite</h3>
+                        <p class="centered">
+                            <span class="label label-success">Recommended</span>
+                        </p>
+                        <p>
+                            <a href="https://structurizr.com/help/lite" target="_blank">Structurizr Lite</a> provides a way to quickly work with a single workspace.
+                            It's free to use, and allows you to view/edit diagrams, view documentation, and view architecture decision records defined in a DSL workspace.
+                        </p>
+                        <p>
+                            The auto-sync feature provides the ability to sync your local changes with a workspace stored on the Structurizr cloud service or an on-premises installation.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-4 centered small">
+                        <h3>Structurizr CLI</h3>
+                        <p class="centered">
+                            <span class="label label-success">Recommended</span>
+                        </p>
+                        <p>
+                            The <a href="https://github.com/structurizr/cli" target="_blank">Structurizr CLI</a> is a command line utility, designed to be used in conjunction with the Structurizr DSL.
+                            It provides the ability to push/pull workspaces to/from the Structurizr cloud service or an on-premises installation,
+                            in additional to exporting the views defined in a DSL file to other formats (PlantUML, Mermaid, WebSequenceDiagrams, and Ilograph).
+                        </p>
+
+                        <p>
+                            See <a href="https://github.com/structurizr/cli/blob/master/docs/getting-started.md" target="_blank">Getting started with the Structurizr CLI and DSL</a> for more information.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-4 centered small">
+                        <h3>DSL editor</h3>
+                        <p class="centered">
+                            <span class="label label-warning">Not recommended</span>
+                        </p>
+                        <p>
+                            If you'd rather not use Structurizr Lite or the Structurizr CLI, the Structurizr cloud service/on-premises installation provides a basic online DSL editor.
+                            The editor provides some rudimentary syntax highlighting and the ability to use the DSL without installing any tooling,
+                            but <b>it does not provide access to the full feature set of the DSL</b>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script nonce="">
+    progressMessage.show('<p>Loading workspace...</p>');
+</script>
+
+<style>
+    #sourceTextArea {
+        border: solid 1px #dddddd;
+    }
+    .section {
+        padding-bottom: 0px;
+    }
+
+    pre {
+        padding: 5px;
+    }
+</style>
+
+<div class="section" style="padding-top: 10px">
+    <div class="row" style="margin-left: 0; margin-right: 0;">
+        <div id="sourcePanel" class="col-sm-6 centered">
+            <div class="centered" style="">
+                <div id="ad" style="margin-bottom: 10px; max-width: 728px; margin-left: auto; margin-right: auto;"><a href="https://yowcon.com/sydney-2025/masterclasses/542/visualising-software-architecture-with-the-c4-model" target="_blank"><img src="./implantacao_Structurizr - DSL_files/yow-sydney.png" class="img-responsive" style="border-radius: 5px; border: 1px solid black;"></a></div>
+            </div>
+
+            <form id="demoForm" action="https://structurizr.com/dsl" method="post">
+                <input id="source" name="source" type="hidden" value="">
+                <input id="view" name="view" type="hidden">
+                <input name="perspective" value="" type="hidden">
+                <input id="workspaceAsJson" name="json" type="hidden">
+
+                <div style="text-align: left; margin-bottom: 10px">
+                    <div style="float: right">
+                        <div class="btn-group">
+                            <button id="homeButton" class="btn btn-default" title="Home"><img src="./implantacao_Structurizr - DSL_files/house.svg" class="icon-btn"></button>
+                        </div>
+
+                        <div class="btn-group">
+                            <label class="btn btn-default small">
+                                <img src="./implantacao_Structurizr - DSL_files/cloud-upload.svg" class="icon-btn">
+                                Upload <input id="uploadFileInput" type="file" style="display: none;">
+                            </label>
+                        </div>
+
+                        <div class="btn-group">
+                            <button id="sourceButton" class="btn btn-default" title="Source"><img src="./implantacao_Structurizr - DSL_files/code-slash.svg" class="icon-btn"></button>
+                            <button id="diagramsButton" class="btn btn-default" title="Diagrams"><img src="./implantacao_Structurizr - DSL_files/bounding-box.svg" class="icon-btn"></button>
+                        </div>
+
+                        <button id="renderButton" class="btn btn-default"><img src="./implantacao_Structurizr - DSL_files/play.svg" class="icon-btn"> Render</button>
+                    </div>
+
+                    <div>
+                        
+                        
+                        <select id="keywords" class="form-control select" style="width: auto; display: inline-block">
+    <option value="https://docs.structurizr.com/dsl">Structurizr DSL documentation</option>
+    <option value="https://docs.structurizr.com/dsl/tutorial">Structurizr DSL tutorial</option>
+    <option value="https://docs.structurizr.com/dsl/cookbook">Structurizr DSL cookbook</option>
+    <option value="https://docs.structurizr.com/dsl/basics">Basics</option>
+    <option value="https://docs.structurizr.com/dsl/identifiers">Identifiers</option>
+    <option value="https://docs.structurizr.com/dsl/implied-relationships">Implied relationships</option>
+    <option value="https://docs.structurizr.com/dsl/expressions">Expressions</option>
+    <option value="https://docs.structurizr.com/dsl/language">Structurizr DSL language reference</option>
+    <option value="https://docs.structurizr.com/dsl/language#workspace">workspace</option>
+    <option value="https://docs.structurizr.com/dsl/language#model">&nbsp;- model</option>
+    <option value="https://docs.structurizr.com/dsl/language#group">&nbsp;&nbsp;&nbsp;- group</option>
+    <option value="https://docs.structurizr.com/dsl/language#person">&nbsp;&nbsp;&nbsp;- person</option>
+    <option value="https://docs.structurizr.com/dsl/language#softwaresystem">&nbsp;&nbsp;&nbsp;- softwareSystem</option>
+    <option value="https://docs.structurizr.com/dsl/language#deploymentenvironment">&nbsp;&nbsp;&nbsp;- deploymentEnvironment</option>
+    <option value="https://docs.structurizr.com/dsl/language#deploymentnode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- deploymentNode</option>
+    <option value="https://docs.structurizr.com/dsl/language#infrastructurenode">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- infrastructureNode</option>
+    <option value="https://docs.structurizr.com/dsl/language#softwaresysteminstance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- softwareSystemInstance</option>
+    <option value="https://docs.structurizr.com/dsl/language#containerinstance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- containerInstance</option>
+    <option value="https://docs.structurizr.com/dsl/language#element">&nbsp;&nbsp;&nbsp;- element</option>
+    <option value="https://docs.structurizr.com/dsl/language#relationship">&nbsp;&nbsp;&nbsp;- -&gt; (relationship)</option>
+    <option value="https://docs.structurizr.com/dsl/language#views">&nbsp;- views</option>
+    <option value="https://docs.structurizr.com/dsl/language#systemlandscape-view">&nbsp;&nbsp;&nbsp;- systemLandscape</option>
+    <option value="https://docs.structurizr.com/dsl/language#systemcontext-view">&nbsp;&nbsp;&nbsp;- systemContext</option>
+    <option value="https://docs.structurizr.com/dsl/language#container-view">&nbsp;&nbsp;&nbsp;- container</option>
+    <option value="https://docs.structurizr.com/dsl/language#component-view">&nbsp;&nbsp;&nbsp;- component</option>
+    <option value="https://docs.structurizr.com/dsl/language#filtered-view">&nbsp;&nbsp;&nbsp;- filtered</option>
+    <option value="https://docs.structurizr.com/dsl/language#dynamic-view">&nbsp;&nbsp;&nbsp;- dynamic</option>
+    <option value="https://docs.structurizr.com/dsl/language#deployment-view">&nbsp;&nbsp;&nbsp;- deployment</option>
+    <option value="https://docs.structurizr.com/dsl/language#custom-view">&nbsp;&nbsp;&nbsp;- custom</option>
+    <option value="https://docs.structurizr.com/dsl/language#image-view">&nbsp;&nbsp;&nbsp;- image</option>
+    <option value="https://docs.structurizr.com/dsl/language#styles">&nbsp;&nbsp;&nbsp;- styles</option>
+    <option value="https://docs.structurizr.com/dsl/language#element-style">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- element</option>
+    <option value="https://docs.structurizr.com/dsl/language#relationship-style">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- relationship</option>
+    <option value="https://docs.structurizr.com/dsl/language#themes">&nbsp;&nbsp;&nbsp;- themes</option>
+    <option value="https://docs.structurizr.com/dsl/language#branding">&nbsp;&nbsp;&nbsp;- branding</option>
+    <option value="https://docs.structurizr.com/dsl/language#terminology">&nbsp;&nbsp;&nbsp;- terminology</option>
+    <option value="https://docs.structurizr.com/dsl/language#configuration">&nbsp;- configuration</option>
+    <option value="https://docs.structurizr.com/dsl/language#visibility">&nbsp;&nbsp;&nbsp;- visibility</option>
+    <option value="https://docs.structurizr.com/dsl/language#scope">&nbsp;&nbsp;&nbsp;- scope</option>
+    <option value="https://docs.structurizr.com/dsl/language#users">&nbsp;&nbsp;&nbsp;- users</option>
+</select>
+
+<script nonce="">
+    $('#keywords').change(function () {
+        window.open($('#keywords').val(), "structurizrDslLanguageReference", "top=100,left=300,width=800,height=800,location=no,menubar=no,status=no,toolbar=no");
+    });
+</script>
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <div id="sourceTextArea" class=" ace_editor ace-tm" style="height: 579px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 322px; left: 136px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 47px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: 0px; left: 0px; width: 47px;"><div class="ace_gutter-cell " style="height: 14px; top: 0px;">1<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 14px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 28px;">3<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 42px;">4<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 56px;">5<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 70px;">6<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 84px;">7<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 98px;">8<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 112px;">9<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 126px;">10<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 140px;">11<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 154px;">12<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 168px;">13<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 182px;">14<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 196px;">15<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 210px;">16<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 224px;">17<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 238px;">18<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 252px;">19<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 266px;">20<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 280px;">21<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 294px;">22<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell ace_gutter-active-line " style="height: 14px; top: 308px;">23<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 322px;">24<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 336px;">25<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 350px;">26<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 364px;">27<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 378px;">28<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 392px;">29<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 406px;">30<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 420px;">31<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 434px;">32<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 448px;">33<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 462px;">34<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 476px;">35<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 490px;">36<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 504px;">37<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 518px;">38<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 532px;">39<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 546px;">40<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 560px;">41<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 574px;">42<span class="ace_fold-widget ace_start ace_open" style="display: none; height: 14px;"></span></div><div class="ace_gutter-cell " style="height: 14px; top: 588px;">43<span class="ace_fold-widget ace_start ace_open" style="display: inline-block; height: 14px;"></span></div></div></div><div class="ace_scroller" style="line-height: 14px; left: 46.1953px; right: 12px; bottom: 0px;"><div class="ace_content" style="top: 0px; left: 0px; width: 1011px; height: 593px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 532px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height: 14px; top: 308px; left: 0px; right: 0px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 14px; width: 6.59766px; top: 308px; left: 83.1719px;"></div><div class="ace_bracket ace_start ace_br15" style="height: 14px; width: 6.59766px; top: 266px; left: 769.328px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: 0px; left: 0px;"><div class="ace_line" style="height: 14px; top: 0px;"><span class="ace_structurizr_keyword">workspace</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Cabine</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Digital</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">UFMS"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Modelo</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">C4</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">-</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Contexto</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">-</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Cabine</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Digital"</span></div><div class="ace_line" style="height: 14px; top: 14px;"></div><div class="ace_line" style="height: 14px; top: 28px;"><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">!identifiers </span><span class="ace_structurizr_keyword">hierarchical</span></div><div class="ace_line" style="height: 14px; top: 42px;"></div><div class="ace_line" style="height: 14px; top: 56px;"><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">model</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 70px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    participante</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">person</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Participante"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Participante</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">do</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">evento</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">que</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">tira</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">foto</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">responde</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">questionarios"</span></div><div class="ace_line" style="height: 14px; top: 84px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    organizador</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">person</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Organizador</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Eventos"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Configura</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">os</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">eventos,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">as</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">moldura</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">questionarios"</span></div><div class="ace_line" style="height: 14px; top: 98px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    admin</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">person</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Administrador"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Gerencia</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">o</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">sistema,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">contas</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">dos</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">organizadores</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">inicia</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">o</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">evento"</span></div><div class="ace_line" style="height: 14px; top: 112px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 126px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    emailSystem</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">softwareSystem</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Sistema</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">E-mail</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Externo"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Serviço</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">envio</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e-mail</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">da</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Hostinger</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Reach"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 140px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"External"</span></div><div class="ace_line" style="height: 14px; top: 154px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 168px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 182px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    autenticUser</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">softwareSystem</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Passaport</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">UFMS"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Serviço</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">autenticação/cadastro</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">dos</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">usuários</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Administrador</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Organizador</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Eventos"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 196px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"External"</span></div><div class="ace_line" style="height: 14px; top: 210px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 224px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 238px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    cabineDigital</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">softwareSystem</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Sistema</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Cabine</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Digital</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">UFMS"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Sistema</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">para</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">capturar</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">dados</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">fotos</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">em</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">eventos</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">da</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">UFMS"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 252px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 266px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    mobileApp</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">container</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Aplicação</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Front</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Mobile"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Utilizado</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">para</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">tirar</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">as</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">fotos</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">responder</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">questionários"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 280px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    technology </span><span class="ace_structurizr_string">"Java - Kotlin"</span></div><div class="ace_line" style="height: 14px; top: 294px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Mobile"</span></div><div class="ace_line" style="height: 14px; top: 308px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 322px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 336px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    webApp</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">container</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Aplicação</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Front</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Web"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Painel</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">ADM"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 350px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    technology </span><span class="ace_structurizr_string">"JavaScript - React"</span></div><div class="ace_line" style="height: 14px; top: 364px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Web"</span></div><div class="ace_line" style="height: 14px; top: 378px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 392px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 406px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    api</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">container</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"API</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">-</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Backend"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Fornece</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">o</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">código</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">principal,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">a</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">lógica</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">negócio</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">e</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">gerência</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">dados"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 420px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    technology </span><span class="ace_structurizr_string">"Sprint Boot"</span></div><div class="ace_line" style="height: 14px; top: 434px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"API"</span></div><div class="ace_line" style="height: 14px; top: 448px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 462px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 476px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_variable">    database</span><span class="ace_structurizr_keyword"> = </span><span class="ace_structurizr_keyword">container</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Banco</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">de</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">Dados"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Armazena</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">dados</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">do</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">programa</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">-</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">usuários,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">eventos,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">fotos,</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">questionarios/respostas"</span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 490px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    technology </span><span class="ace_structurizr_string">"PostgreSQL"</span></div><div class="ace_line" style="height: 14px; top: 504px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">tags</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Database"</span></div><div class="ace_line" style="height: 14px; top: 518px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 532px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_brace">}</span></div><div class="ace_line" style="height: 14px; top: 546px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div><div class="ace_line" style="height: 14px; top: 560px;"><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span><span class="ace_structurizr_keyword">deploymentEnvironment</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_string">"Producao"</span><span class="ace_structurizr_whitespace"> </span><span class="ace_structurizr_brace">{</span></div><div class="ace_line" style="height: 14px; top: 574px;"><span class="ace_indent-guide">    </span><span class="ace_indent-guide">    </span><span class="ace_structurizr_default">    </span></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; top: 308px; left: 90px; width: 7px; height: 14px; animation-duration: 1000ms;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="width: 17px; bottom: 12px;"><div class="ace_scrollbar-inner" style="width: 17px; height: 2114px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="height: 17px; left: 46.1953px; right: 12px;"><div class="ace_scrollbar-inner" style="height: 17px; width: 1011px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
+            </form>
+
+            
+                
+                    <div class="smaller" style="margin-top: 5px">
+                        Structurizr DSL <a href="https://github.com/structurizr/java/blob/master/changelog.md" target="_blank">v5.0.1</a>
+                    </div>
+                
+                
+            
+        </div>
+        <div id="diagramsPanel" class="col-sm-6 centered">
+            
+            
+            
+
+            <div id="viewListPanel" style="margin-bottom: 10px">
+                <div class="form-inline">
+                    <span id="diagramNavButtons" class="hidden">
+                        <button id="viewSourceButton" class="btn btn-default" title="Source"><img src="./implantacao_Structurizr - DSL_files/code-slash.svg" class="icon-btn"> View source</button>
+                    </span>
+                    <select id="viewsList" class="form-control"><option value="Contexto">System Context View: Sistema Cabine Digital UFMS (#Contexto)</option><option value="Containers">Container View: Sistema Cabine Digital UFMS (#Containers)</option><option value="Implantacao">Deployment View: Sistema Cabine Digital UFMS - Producao (#Implantacao)</option></select>
+                </div>
+            </div>
+
+            <div id="structurizrRenderer">
+                <div>
+                    <div id="diagramEditor"><div style="text-align: center"><iframe id="embeddedStructurizrDiagram" class="structurizrEmbed thumbnail" src="./implantacao_Structurizr - DSL_files/embed.html" width="676px" height="646px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe></div></div>
+                </div>
+
+            </div>
+
+            
+            
+        </div>
+    </div>
+</div>
+
+<script nonce="">
+    const LOCAL_STORAGE_SOURCE = 'structurizr/demo/dsl/source';
+    const LOCAL_STORAGE_JSON = 'structurizr/demo/dsl/json';
+
+    var viewInFocus = '';
+    var editor;
+    var structurizrDiagramIframeRendered = false;
+
+    window.onresize = resize;
+
+    $('#homeButton').click(function(event) { event.preventDefault(); window.location.href = '/'; });
+    $('#sourceButton').click(function(event) { sourceButtonClicked(event); });
+    $('#diagramsButton').click(function(event) { diagramsButtonClicked(event); });
+    $('#viewSourceButton').click(function(event) { sourceButtonClicked(event); });
+    $('#renderButton').click(function() { refresh(); });
+
+    $('#uploadFileInput').on('change', function() { importSourceFile(this.files); });
+
+    function workspaceLoaded() {
+        init();
+    }
+
+    function init() {
+        var listOfViews = structurizr.workspace.getViews();
+        if (listOfViews.length > 0) {
+            var viewsList = $('#viewsList');
+            viewsList.empty();
+
+            for (var i = 0; i < listOfViews.length; i++) {
+                var view = listOfViews[i];
+                viewsList.append('<option value="' + structurizr.util.escapeHtml(view.key) + '">' + structurizr.util.escapeHtml(structurizr.ui.getTitleForView(view)) + ' (#' + view.key + ')</option>');
+            }
+
+            if (viewInFocus === undefined || viewInFocus === '') {
+                viewInFocus = structurizr.workspace.getViews()[0].key;
+            }
+
+            if (structurizr.workspace.findViewByKey(viewInFocus) === undefined) {
+                viewInFocus = structurizr.workspace.getViews()[0].key;
+            }
+
+            viewsList.val(viewInFocus);
+
+            viewsList.change(function () {
+                viewInFocus = $(this).val();
+                changeView();
+            });
+        }
+
+        editor = ace.edit("sourceTextArea");
+        editor.setOption("printMargin", false);
+
+        if (document.cookie && document.cookie.indexOf('structurizr.demo') > -1) {
+            editor.setOption("fontSize", "16px");
+        }
+
+        ace.config.set('basePath', 'https://static.structurizr.com/js/ace');
+        
+        
+        editor.session.setMode("ace/mode/structurizr");
+
+        
+
+        
+        
+        
+
+        showAd('ad');
+        const adImage = $('#ad img');
+        adImage.css('width', '');
+        adImage.css('height', '');
+        adImage.addClass('img-responsive');
+
+        
+
+        setUnsavedChanges(true);
+
+        $(window).on("beforeunload", function () {
+            try {
+                localStorage.setItem(LOCAL_STORAGE_SOURCE, structurizr.util.btoa(editor.getValue()));
+
+                if (structurizr.workspace) {
+                    const workspace = structurizr.workspace.getJson();
+                    workspace.views = structurizr.workspace.views;
+
+                    const jsonAsString = JSON.stringify(workspace);
+                    localStorage.setItem(LOCAL_STORAGE_JSON, structurizr.util.btoa(jsonAsString));
+                }
+            } catch (e) {
+                console.log(e);
+            }
+
+            if (unsavedChanges) {
+                return "There are unsaved changes.";
+            }
+        });
+
+        showStructurizr();
+
+        resize();
+        progressMessage.hide();
+    }
+
+    var verticalPadding = 100;
+
+    function resize() {
+        var adHeight = $('#ad').outerHeight();
+        if (adHeight < 10) {
+            adHeight = 87;
+        }
+        $('#sourceTextArea').css('height', (window.innerHeight - adHeight - verticalPadding) + 'px');
+        if (editor) {
+            editor.resize(true);
+        }
+        structurizr.embed.setMaxHeight(window.innerHeight - verticalPadding - 20);
+        structurizr.embed.resizeEmbeddedDiagrams();
+    }
+
+    function renderStructurizrDiagram() {
+        if (structurizrDiagramIframeRendered === false) {
+            var diagramEditorDiv = $('#diagramEditor');
+            diagramEditorDiv.empty();
+
+            var diagramIdentifier = viewInFocus;
+            var perspective = '';
+            var domId = 'embeddedStructurizrDiagram';
+            var embedUrl = '/embed?view=' + encodeURIComponent(diagramIdentifier) + '&editable=true&iframe=' + domId + '&perspective=' + encodeURIComponent(perspective);
+            diagramEditorDiv.append('<div style="text-align: center"><iframe id="' + domId + '" class="structurizrEmbed thumbnail" src="' + embedUrl + '" width="100%" height="' + window.innerHeight + 'px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" allowfullscreen="true"></iframe></div>');
+
+            setTimeout(function () {
+                try {
+                    document.getElementById('embeddedStructurizrDiagram').contentWindow.structurizr.scripting = undefined;
+
+                    document.getElementById('embeddedStructurizrDiagram').contentWindow.structurizr.diagram.onViewChanged(function(view) {
+                        document.getElementById('embeddedStructurizrDiagram').contentWindow.viewChanged(view);
+
+                        if (document.getElementById('viewsList').value !== view) {
+                            document.getElementById('viewsList').value = view;
+                        }
+                    });
+                } catch (e) {
+                }
+            }, 2000);
+
+            structurizrDiagramIframeRendered = true;
+        } else {
+            changeView();
+        }
+    }
+
+    function changeView() {
+        const diagramIdentifier = $('#viewsList').val();
+        document.getElementById('embeddedStructurizrDiagram').contentWindow.location.hash = '#' + diagramIdentifier;
+    }
+
+    var unsavedChanges = false;
+
+    function setUnsavedChanges(bool) {
+        unsavedChanges = bool;
+    }
+
+    function refresh() {
+        setUnsavedChanges(false);
+        if (document.getElementById('embeddedStructurizrDiagram')) {
+            document.getElementById('embeddedStructurizrDiagram').contentWindow.unsavedChanges = false;
+        }
+        $('#source').val(editor.getValue());
+        $('#view').val($('#viewsList').val());
+
+        structurizr.workspace.views.configuration.lastSavedView = viewInFocus;
+        const workspace = structurizr.workspace.getJson();
+
+        if (workspace.properties === undefined) {
+            workspace.properties = {};
+        }
+        workspace.properties['structurizr.dsl'] = structurizr.util.btoa(editor.getValue());
+        workspace.views = structurizr.workspace.views;
+
+        const jsonAsString = JSON.stringify(workspace);
+
+        $('#workspaceAsJson').val(jsonAsString);
+
+        localStorage.setItem(LOCAL_STORAGE_SOURCE, structurizr.util.btoa(editor.getValue()));
+        localStorage.setItem(LOCAL_STORAGE_JSON, structurizr.util.btoa(jsonAsString));
+
+        return true;
+    }
+
+    function showStructurizr() {
+        $('#viewListPanel').removeClass('hidden');
+        renderStructurizrDiagram();
+    }
+
+    var sourceVisible = true;
+    var diagramsVisible = true;
+
+    function sourceButtonClicked(e) {
+        e.preventDefault();
+        if (sourceVisible === false || diagramsVisible === false) {
+            showSourceAndDiagrams();
+        } else {
+            hideDiagrams();
+        }
+
+        editor.focus();
+    }
+
+    function diagramsButtonClicked(e) {
+        e.preventDefault();
+        if (diagramsVisible === false || sourceVisible === false) {
+            showSourceAndDiagrams();
+        } else {
+            hideSource();
+        }
+
+        $('#diagramEditorIframe').focus();
+    }
+
+    function hideSource() {
+        $('#sourcePanel').addClass('hidden');
+        $('#diagramsPanel').removeClass('col-sm-6');
+
+        sourceVisible = false;
+        $('#diagramNavButtons').removeClass('hidden');
+        resize();
+    }
+
+    function showSourceAndDiagrams() {
+        $('#sourcePanel').removeClass('hidden');
+        $('#sourcePanel').addClass('col-sm-6');
+        $('#diagramsPanel').removeClass('hidden');
+        $('#diagramsPanel').addClass('col-sm-6');
+
+        $('#diagramNavButtons').addClass('hidden');
+
+        sourceVisible = true;
+        diagramsVisible = true;
+
+        resize();
+    }
+
+    function hideDiagrams() {
+        $('#diagramsPanel').addClass('hidden');
+        $('#sourcePanel').removeClass('col-sm-6');
+
+        diagramsVisible = false;
+        resize();
+    }
+
+    function hideSourceAndDiagrams(message) {
+        $('#sourcePanel').addClass('hidden');
+        $('#diagramsPanel').addClass('hidden');
+    }
+
+    function demo(boolean) {
+        if (boolean) {
+            document.cookie = 'structurizr.demo=true';
+        } else {
+            document.cookie = 'structurizr.demo=; expires=Thu, 01 Jan 1970 00:00:01 GMT'
+        }
+    }
+    
+    function importSourceFile(files) {
+        if (files && files.length > 0) {
+            var reader = new FileReader();
+            reader.onload = function (evt) {
+                var content = evt.target.result;
+                editor.setValue(content, -1);
+            };
+
+            reader.readAsText(files[0]);
+        }
+    }
+
+    var searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get('src')) {
+        hideSource();
+    }
+</script>
+
+
+<script nonce="">
+    const structurizrApiClient = undefined;
+    var structurizrEncryptionStrategy;
+    const jsonAsString = 'eyJjb25maWd1cmF0aW9uIjp7fSwiZGVzY3JpcHRpb24iOiJNb2RlbG8gQzQgLSBDb250ZXh0byAtIENhYmluZSBEaWdpdGFsIiwiZG9jdW1lbnRhdGlvbiI6e30sImlkIjowLCJsYXN0TW9kaWZpZWREYXRlIjoiMjAyNS0xMS0wNlQxNDowMDozMVoiLCJtb2RlbCI6eyJkZXBsb3ltZW50Tm9kZXMiOlt7ImNvbnRhaW5lckluc3RhbmNlcyI6W3siY29udGFpbmVySWQiOiI3IiwiZGVwbG95bWVudEdyb3VwcyI6WyJEZWZhdWx0Il0sImVudmlyb25tZW50IjoiUHJvZHVjYW8iLCJpZCI6IjEyIiwiaW5zdGFuY2VJZCI6MSwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6IjJlZTg1ZTYxLTcxYmYtNGMzYy1hNTVmLTFkNWEzMTBhNzIzNy40MDVlMWY1OC01MTFhLTQxOTUtYTgxZS1lMDk1NTUzNDE3NTEuOGJkZTFlNDAtZTRjZC00MzJkLTkzN2MtYzE5MzQ4OGEzMjI2In0sInRhZ3MiOiJDb250YWluZXIgSW5zdGFuY2UifV0sImRlc2NyaXB0aW9uIjoiVW0gdGFibGV0IEFuZHJvaWQgbm8gbG9jYWwgZG8gZXZlbnRvIiwiZW52aXJvbm1lbnQiOiJQcm9kdWNhbyIsImlkIjoiMTEiLCJpbnN0YW5jZXMiOiIxIiwibmFtZSI6IlRhYmxldCBkbyBFdmVudG8iLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbC5pZGVudGlmaWVyIjoiMmVlODVlNjEtNzFiZi00YzNjLWE1NWYtMWQ1YTMxMGE3MjM3LjQwNWUxZjU4LTUxMWEtNDE5NS1hODFlLWUwOTU1NTM0MTc1MSJ9LCJ0YWdzIjoiRWxlbWVudCxEZXBsb3ltZW50IE5vZGUsTW9iaWxlIERldmljZSIsInRlY2hub2xvZ3kiOiJBbmRyb2lkIE9TIn0seyJjb250YWluZXJJbnN0YW5jZXMiOlt7ImNvbnRhaW5lcklkIjoiOCIsImRlcGxveW1lbnRHcm91cHMiOlsiRGVmYXVsdCJdLCJlbnZpcm9ubWVudCI6IlByb2R1Y2FvIiwiaWQiOiIxNCIsImluc3RhbmNlSWQiOjEsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiIyZWU4NWU2MS03MWJmLTRjM2MtYTU1Zi0xZDVhMzEwYTcyMzcuZWJiMTNlMTktZTE4ZS00NTNhLWE3MjctZjY4ZjU2MWUzNzdmLjlmMWRiM2U3LWVkYmMtNGJjYS05MTUxLTVkMjczN2RmNDZhYyJ9LCJ0YWdzIjoiQ29udGFpbmVyIEluc3RhbmNlIn1dLCJkZXNjcmlwdGlvbiI6Ik8gbmF2ZWdhZG9yIHdlYiBubyBjb21wdXRhZG9yIGRvIE9yZ2FuaXphZG9yIG91IEFkbWluIiwiZW52aXJvbm1lbnQiOiJQcm9kdWNhbyIsImlkIjoiMTMiLCJpbnN0YW5jZXMiOiIxIiwibmFtZSI6IkNvbXB1dGFkb3IgZG8gVXN1w6FyaW8iLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbC5pZGVudGlmaWVyIjoiMmVlODVlNjEtNzFiZi00YzNjLWE1NWYtMWQ1YTMxMGE3MjM3LmViYjEzZTE5LWUxOGUtNDUzYS1hNzI3LWY2OGY1NjFlMzc3ZiJ9LCJ0YWdzIjoiRWxlbWVudCxEZXBsb3ltZW50IE5vZGUsVXNlciBEZXZpY2UiLCJ0ZWNobm9sb2d5IjoiRGVza3RvcCBCcm93c2VyIn0seyJjb250YWluZXJJbnN0YW5jZXMiOlt7ImNvbnRhaW5lcklkIjoiOSIsImRlcGxveW1lbnRHcm91cHMiOlsiRGVmYXVsdCJdLCJlbnZpcm9ubWVudCI6IlByb2R1Y2FvIiwiaWQiOiIxNiIsImluc3RhbmNlSWQiOjEsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiIyZWU4NWU2MS03MWJmLTRjM2MtYTU1Zi0xZDVhMzEwYTcyMzcuMDU3MzgzNzQtNTA2Yy00MDA3LWE5M2EtZTdlNDc3MGRkY2FjLjcwYzEzZWY5LTNjMmQtNDVjYS1hNTY0LWVjMzY1ZjE2MDZiOCJ9LCJ0YWdzIjoiQ29udGFpbmVyIEluc3RhbmNlIn1dLCJkZXNjcmlwdGlvbiI6IlNlcnZpZG9yIG5hIG51dmVtIChleDogQVdTLCBBenVyZSkgcXVlIHJvZGEgYSBsw7NnaWNhIGRlIG5lZ8OzY2lvIiwiZW52aXJvbm1lbnQiOiJQcm9kdWNhbyIsImlkIjoiMTUiLCJpbnN0YW5jZXMiOiIxIiwibmFtZSI6IlNlcnZpZG9yIGRlIEFwbGljYcOnw6NvIiwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6IjJlZTg1ZTYxLTcxYmYtNGMzYy1hNTVmLTFkNWEzMTBhNzIzNy4wNTczODM3NC01MDZjLTQwMDctYTkzYS1lN2U0NzcwZGRjYWMifSwidGFncyI6IkVsZW1lbnQsRGVwbG95bWVudCBOb2RlLEluZnJhc3RydWN0dXJlIiwidGVjaG5vbG9neSI6IlNlcnZpZG9yIExpbnV4IChleDogVWJ1bnR1KSJ9LHsiY29udGFpbmVySW5zdGFuY2VzIjpbeyJjb250YWluZXJJZCI6IjEwIiwiZGVwbG95bWVudEdyb3VwcyI6WyJEZWZhdWx0Il0sImVudmlyb25tZW50IjoiUHJvZHVjYW8iLCJpZCI6IjE4IiwiaW5zdGFuY2VJZCI6MSwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6IjJlZTg1ZTYxLTcxYmYtNGMzYy1hNTVmLTFkNWEzMTBhNzIzNy43ZDMzOGQ3MC0xOTNiLTQ4N2QtODE3YS00NDZhOTE1Y2JlMGEuNDNhYTkxOGYtNDNhNi00NzQ3LTkxZjctNzA2MTNjNTNlYjBiIn0sInRhZ3MiOiJDb250YWluZXIgSW5zdGFuY2UifV0sImRlc2NyaXB0aW9uIjoiU2VydmnDp28gZGUgYmFuY28gZGUgZGFkb3MgZ2VyZW5jaWFkbyAoZXg6IEFXUyBSRFMpIiwiZW52aXJvbm1lbnQiOiJQcm9kdWNhbyIsImlkIjoiMTciLCJpbnN0YW5jZXMiOiIxIiwibmFtZSI6IlNlcnZpZG9yIGRlIEJhbmNvIGRlIERhZG9zIiwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6IjJlZTg1ZTYxLTcxYmYtNGMzYy1hNTVmLTFkNWEzMTBhNzIzNy43ZDMzOGQ3MC0xOTNiLTQ4N2QtODE3YS00NDZhOTE1Y2JlMGEifSwidGFncyI6IkVsZW1lbnQsRGVwbG95bWVudCBOb2RlLEluZnJhc3RydWN0dXJlIiwidGVjaG5vbG9neSI6IlBvc3RncmVTUUwifV0sInBlb3BsZSI6W3siZGVzY3JpcHRpb24iOiJQYXJ0aWNpcGFudGUgZG8gZXZlbnRvIHF1ZSB0aXJhIGZvdG8gZSByZXNwb25kZSBxdWVzdGlvbmFyaW9zIiwiaWQiOiIxIiwibmFtZSI6IlBhcnRpY2lwYW50ZSIsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiJwYXJ0aWNpcGFudGUifSwicmVsYXRpb25zaGlwcyI6W3siZGVzY3JpcHRpb24iOiJUaXJhIGZvdG9zIGUgcmVzcG9uZGUgcXVlc3Rpb27DoXJpbyBkdXJhbnRlIG8gZXZlbnRvIiwiZGVzdGluYXRpb25JZCI6IjciLCJpZCI6IjIzIiwic291cmNlSWQiOiIxIiwidGFncyI6IlJlbGF0aW9uc2hpcCJ9LHsiZGVzY3JpcHRpb24iOiJUaXJhIGZvdG9zIGUgcmVzcG9uZGUgcXVlc3Rpb27DoXJpbyBkdXJhbnRlIG8gZXZlbnRvIiwiZGVzdGluYXRpb25JZCI6IjYiLCJpZCI6IjI0IiwibGlua2VkUmVsYXRpb25zaGlwSWQiOiIyMyIsInNvdXJjZUlkIjoiMSJ9XSwidGFncyI6IkVsZW1lbnQsUGVyc29uIn0seyJkZXNjcmlwdGlvbiI6IkNvbmZpZ3VyYSBvcyBldmVudG9zLCBhcyBtb2xkdXJhIGUgcXVlc3Rpb25hcmlvcyIsImlkIjoiMiIsIm5hbWUiOiJPcmdhbml6YWRvciBkZSBFdmVudG9zIiwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6Im9yZ2FuaXphZG9yIn0sInJlbGF0aW9uc2hpcHMiOlt7ImRlc2NyaXB0aW9uIjoiaW5pY2lhIGV2ZW50byIsImRlc3RpbmF0aW9uSWQiOiI3IiwiaWQiOiIyMSIsInNvdXJjZUlkIjoiMiIsInRhZ3MiOiJSZWxhdGlvbnNoaXAifSx7ImRlc2NyaXB0aW9uIjoiaW5pY2lhIGV2ZW50byIsImRlc3RpbmF0aW9uSWQiOiI2IiwiaWQiOiIyMiIsImxpbmtlZFJlbGF0aW9uc2hpcElkIjoiMjEiLCJzb3VyY2VJZCI6IjIifSx7ImRlc2NyaXB0aW9uIjoiZ2VyZW5jaWEgZXZlbnRvIGUgcXVlc3Rpb27DoXJpb3MiLCJkZXN0aW5hdGlvbklkIjoiOCIsImlkIjoiMjUiLCJzb3VyY2VJZCI6IjIiLCJ0YWdzIjoiUmVsYXRpb25zaGlwIn1dLCJ0YWdzIjoiRWxlbWVudCxQZXJzb24ifSx7ImRlc2NyaXB0aW9uIjoiR2VyZW5jaWEgbyBzaXN0ZW1hLCBjb250YXMgZG9zIG9yZ2FuaXphZG9yZXMgZSBpbmljaWEgbyBldmVudG8iLCJpZCI6IjMiLCJuYW1lIjoiQWRtaW5pc3RyYWRvciIsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiJhZG1pbiJ9LCJyZWxhdGlvbnNoaXBzIjpbeyJkZXNjcmlwdGlvbiI6IkFkbWluaXN0cmEgbyBzaXN0ZW1hIGUgdXN1w6FyaW9zIiwiZGVzdGluYXRpb25JZCI6IjYiLCJpZCI6IjE5Iiwic291cmNlSWQiOiIzIiwidGFncyI6IlJlbGF0aW9uc2hpcCJ9LHsiZGVzY3JpcHRpb24iOiJnZXJlbmNpYSBldmVudG9zIGUgb3JnYW5pemFkb3JlcyIsImRlc3RpbmF0aW9uSWQiOiI4IiwiaWQiOiIyNiIsInNvdXJjZUlkIjoiMyIsInRhZ3MiOiJSZWxhdGlvbnNoaXAifV0sInRhZ3MiOiJFbGVtZW50LFBlcnNvbiJ9XSwic29mdHdhcmVTeXN0ZW1zIjpbeyJkZXNjcmlwdGlvbiI6IlNlcnZpw6dvIGRlIGVudmlvIGRlIGUtbWFpbCBkYSBIb3N0aW5nZXIgUmVhY2giLCJkb2N1bWVudGF0aW9uIjp7fSwiaWQiOiI0IiwibmFtZSI6IlNpc3RlbWEgZGUgRS1tYWlsIEV4dGVybm8iLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbC5pZGVudGlmaWVyIjoiZW1haWxTeXN0ZW0ifSwicmVsYXRpb25zaGlwcyI6W3siZGVzY3JpcHRpb24iOiJFbnZpYSBlLW1haWwgcGFyYSIsImRlc3RpbmF0aW9uSWQiOiIxIiwiaWQiOiIzMyIsInNvdXJjZUlkIjoiNCIsInRhZ3MiOiJSZWxhdGlvbnNoaXAifV0sInRhZ3MiOiJFbGVtZW50LFNvZnR3YXJlIFN5c3RlbSxFeHRlcm5hbCJ9LHsiZGVzY3JpcHRpb24iOiJTZXJ2acOnbyBkZSBhdXRlbnRpY2HDp8Ojby9jYWRhc3RybyBkb3MgdXN1w6FyaW9zIEFkbWluaXN0cmFkb3IgZSBPcmdhbml6YWRvciBkZSBFdmVudG9zIiwiZG9jdW1lbnRhdGlvbiI6e30sImlkIjoiNSIsIm5hbWUiOiJQYXNzYXBvcnQgVUZNUyIsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiJhdXRlbnRpY1VzZXIifSwidGFncyI6IkVsZW1lbnQsU29mdHdhcmUgU3lzdGVtLEV4dGVybmFsIn0seyJjb250YWluZXJzIjpbeyJkZXNjcmlwdGlvbiI6IlV0aWxpemFkbyBwYXJhIHRpcmFyIGFzIGZvdG9zIGUgcmVzcG9uZGVyIHF1ZXN0aW9uw6FyaW9zIiwiZG9jdW1lbnRhdGlvbiI6e30sImlkIjoiNyIsIm5hbWUiOiJBcGxpY2HDp8OjbyBGcm9udCBNb2JpbGUiLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbC5pZGVudGlmaWVyIjoiY2FiaW5lRGlnaXRhbC5tb2JpbGVBcHAifSwicmVsYXRpb25zaGlwcyI6W3siZGVzY3JpcHRpb24iOiJGYXogY2hhbWFkYXMiLCJkZXN0aW5hdGlvbklkIjoiOSIsImlkIjoiMjgiLCJzb3VyY2VJZCI6IjciLCJ0YWdzIjoiUmVsYXRpb25zaGlwIn1dLCJ0YWdzIjoiRWxlbWVudCxDb250YWluZXIsTW9iaWxlIiwidGVjaG5vbG9neSI6IkphdmEgLSBLb3RsaW4ifSx7ImRlc2NyaXB0aW9uIjoiUGFpbmVsIEFETSIsImRvY3VtZW50YXRpb24iOnt9LCJpZCI6IjgiLCJuYW1lIjoiQXBsaWNhw6fDo28gRnJvbnQgV2ViIiwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6ImNhYmluZURpZ2l0YWwud2ViQXBwIn0sInJlbGF0aW9uc2hpcHMiOlt7ImRlc2NyaXB0aW9uIjoiRmF6IGNoYW1hZGFzIiwiZGVzdGluYXRpb25JZCI6IjkiLCJpZCI6IjI3Iiwic291cmNlSWQiOiI4IiwidGFncyI6IlJlbGF0aW9uc2hpcCJ9XSwidGFncyI6IkVsZW1lbnQsQ29udGFpbmVyLFdlYiIsInRlY2hub2xvZ3kiOiJKYXZhU2NyaXB0IC0gUmVhY3QifSx7ImRlc2NyaXB0aW9uIjoiRm9ybmVjZSBvIGPDs2RpZ28gcHJpbmNpcGFsLCBhIGzDs2dpY2EgZGUgbmVnw7NjaW8gZSBnZXLDqm5jaWEgZGFkb3MiLCJkb2N1bWVudGF0aW9uIjp7fSwiaWQiOiI5IiwibmFtZSI6IkFQSSAtIEJhY2tlbmQiLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbC5pZGVudGlmaWVyIjoiY2FiaW5lRGlnaXRhbC5hcGkifSwicmVsYXRpb25zaGlwcyI6W3siZGVzY3JpcHRpb24iOiJhdXRlbnRpY2EgdXN1w6FyaW9zIiwiZGVzdGluYXRpb25JZCI6IjUiLCJpZCI6IjI5Iiwic291cmNlSWQiOiI5IiwidGFncyI6IlJlbGF0aW9uc2hpcCJ9LHsiZGVzY3JpcHRpb24iOiJMw6ogZSBlc2NyZXZlL2FybWF6ZW5hIGRhZG9zIiwiZGVzdGluYXRpb25JZCI6IjEwIiwiaWQiOiIzMSIsInNvdXJjZUlkIjoiOSIsInRhZ3MiOiJSZWxhdGlvbnNoaXAifSx7ImRlc2NyaXB0aW9uIjoiRW52aWEgZS1tYWlscyBwb3IiLCJkZXN0aW5hdGlvbklkIjoiNCIsImlkIjoiMzIiLCJzb3VyY2VJZCI6IjkiLCJ0YWdzIjoiUmVsYXRpb25zaGlwIn1dLCJ0YWdzIjoiRWxlbWVudCxDb250YWluZXIsQVBJIiwidGVjaG5vbG9neSI6IlNwcmludCBCb290In0seyJkZXNjcmlwdGlvbiI6IkFybWF6ZW5hIGRhZG9zIGRvIHByb2dyYW1hIC0gdXN1w6FyaW9zLCBldmVudG9zLCBmb3RvcywgcXVlc3Rpb25hcmlvcy9yZXNwb3N0YXMiLCJkb2N1bWVudGF0aW9uIjp7fSwiaWQiOiIxMCIsIm5hbWUiOiJCYW5jbyBkZSBEYWRvcyIsInByb3BlcnRpZXMiOnsic3RydWN0dXJpenIuZHNsLmlkZW50aWZpZXIiOiJjYWJpbmVEaWdpdGFsLmRhdGFiYXNlIn0sInRhZ3MiOiJFbGVtZW50LENvbnRhaW5lcixEYXRhYmFzZSIsInRlY2hub2xvZ3kiOiJQb3N0Z3JlU1FMIn1dLCJkZXNjcmlwdGlvbiI6IlNpc3RlbWEgcGFyYSBjYXB0dXJhciBkYWRvcyBlIGZvdG9zIGVtIGV2ZW50b3MgZGEgVUZNUyIsImRvY3VtZW50YXRpb24iOnt9LCJpZCI6IjYiLCJuYW1lIjoiU2lzdGVtYSBDYWJpbmUgRGlnaXRhbCBVRk1TIiwicHJvcGVydGllcyI6eyJzdHJ1Y3R1cml6ci5kc2wuaWRlbnRpZmllciI6ImNhYmluZURpZ2l0YWwifSwicmVsYXRpb25zaGlwcyI6W3siZGVzY3JpcHRpb24iOiJFbnZpYSBlLW1haWwoZm90bykgcGFyYSBwYXJ0aWNpcGFudGUgdXNhbmRvIiwiZGVzdGluYXRpb25JZCI6IjQiLCJpZCI6IjIwIiwic291cmNlSWQiOiI2IiwidGFncyI6IlJlbGF0aW9uc2hpcCJ9LHsiZGVzY3JpcHRpb24iOiJhdXRlbnRpY2EgdXN1w6FyaW9zIiwiZGVzdGluYXRpb25JZCI6IjUiLCJpZCI6IjMwIiwibGlua2VkUmVsYXRpb25zaGlwSWQiOiIyOSIsInNvdXJjZUlkIjoiNiJ9XSwidGFncyI6IkVsZW1lbnQsU29mdHdhcmUgU3lzdGVtIn1dfSwibmFtZSI6IkNhYmluZSBEaWdpdGFsIFVGTVMiLCJwcm9wZXJ0aWVzIjp7InN0cnVjdHVyaXpyLmRzbCI6ImQyOXlhM053WVdObElDSkRZV0pwYm1VZ1JHbG5hWFJoYkNCVlJrMVRJaUFpVFc5a1pXeHZJRU0wSUMwZ1EyOXVkR1Y0ZEc4Z0xTQkRZV0pwYm1VZ1JHbG5hWFJoYkNJTkNnMEtJQ0FnSUNGcFpHVnVkR2xtYVdWeWN5Qm9hV1Z5WVhKamFHbGpZV3dOQ2cwS0lDQWdJRzF2WkdWc0lIc05DaUFnSUNBZ0lDQWdjR0Z5ZEdsamFYQmhiblJsSUQwZ2NHVnljMjl1SUNKUVlYSjBhV05wY0dGdWRHVWlJQ0pRWVhKMGFXTnBjR0Z1ZEdVZ1pHOGdaWFpsYm5SdklIRjFaU0IwYVhKaElHWnZkRzhnWlNCeVpYTndiMjVrWlNCeGRXVnpkR2x2Ym1GeWFXOXpJZzBLSUNBZ0lDQWdJQ0J2Y21kaGJtbDZZV1J2Y2lBOUlIQmxjbk52YmlBaVQzSm5ZVzVwZW1Ga2IzSWdaR1VnUlhabGJuUnZjeUlnSWtOdmJtWnBaM1Z5WVNCdmN5QmxkbVZ1ZEc5ekxDQmhjeUJ0YjJ4a2RYSmhJR1VnY1hWbGMzUnBiMjVoY21sdmN5SU5DaUFnSUNBZ0lDQWdZV1J0YVc0Z1BTQndaWEp6YjI0Z0lrRmtiV2x1YVhOMGNtRmtiM0lpSUNKSFpYSmxibU5wWVNCdklITnBjM1JsYldFc0lHTnZiblJoY3lCa2IzTWdiM0puWVc1cGVtRmtiM0psY3lCbElHbHVhV05wWVNCdklHVjJaVzUwYnlJTkNpQWdJQ0FnSUNBZ0RRb2dJQ0FnSUNBZ0lHVnRZV2xzVTNsemRHVnRJRDBnYzI5bWRIZGhjbVZUZVhOMFpXMGdJbE5wYzNSbGJXRWdaR1VnUlMxdFlXbHNJRVY0ZEdWeWJtOGlJQ0pUWlhKMmFjT25ieUJrWlNCbGJuWnBieUJrWlNCbExXMWhhV3dnWkdFZ1NHOXpkR2x1WjJWeUlGSmxZV05vSW5zTkNpQWdJQ0FnSUNBZ0lDQWdJSFJoWjNNZ0lrVjRkR1Z5Ym1Gc0lnMEtJQ0FnSUNBZ0lDQjlEUW9nSUNBZ0lDQWdJQTBLSUNBZ0lDQWdJQ0JoZFhSbGJuUnBZMVZ6WlhJZ1BTQnpiMlowZDJGeVpWTjVjM1JsYlNBaVVHRnpjMkZ3YjNKMElGVkdUVk1pSUNKVFpYSjJhY09uYnlCa1pTQmhkWFJsYm5ScFkySERwOE9qYnk5allXUmhjM1J5YnlCa2IzTWdkWE4xdzZGeWFXOXpJRUZrYldsdWFYTjBjbUZrYjNJZ1pTQlBjbWRoYm1sNllXUnZjaUJrWlNCRmRtVnVkRzl6SW5zTkNpQWdJQ0FnSUNBZ0lDQWdJSFJoWjNNZ0lrVjRkR1Z5Ym1Gc0lnMEtJQ0FnSUNBZ0lDQjlEUW9nSUNBZ0lDQWdJQTBLSUNBZ0lDQWdJQ0JqWVdKcGJtVkVhV2RwZEdGc0lEMGdjMjltZEhkaGNtVlRlWE4wWlcwZ0lsTnBjM1JsYldFZ1EyRmlhVzVsSUVScFoybDBZV3dnVlVaTlV5SWdJbE5wYzNSbGJXRWdjR0Z5WVNCallYQjBkWEpoY2lCa1lXUnZjeUJsSUdadmRHOXpJR1Z0SUdWMlpXNTBiM01nWkdFZ1ZVWk5VeUlnZXcwS0lDQWdJQ0FnSUNBZ0lDQWdEUW9nSUNBZ0lDQWdJQ0FnSUNCdGIySnBiR1ZCY0hBZ1BTQmpiMjUwWVdsdVpYSWdJa0Z3YkdsalljT253Nk52SUVaeWIyNTBJRTF2WW1sc1pTSWdJbFYwYVd4cGVtRmtieUJ3WVhKaElIUnBjbUZ5SUdGeklHWnZkRzl6SUdVZ2NtVnpjRzl1WkdWeUlIRjFaWE4wYVc5dXc2RnlhVzl6SW5zTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCMFpXTm9ibTlzYjJkNUlDSktZWFpoSUMwZ1MyOTBiR2x1SWcwS0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUhSaFozTWdJazF2WW1sc1pTSU5DaUFnSUNBZ0lDQWdJQ0FnSUgwTkNpQWdJQ0FnSUNBZ0lDQWdJQTBLSUNBZ0lDQWdJQ0FnSUNBZ2QyVmlRWEJ3SUQwZ1kyOXVkR0ZwYm1WeUlDSkJjR3hwWTJIRHA4T2pieUJHY205dWRDQlhaV0lpSUNKUVlXbHVaV3dnUVVSTkluc05DaUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQjBaV05vYm05c2IyZDVJQ0pLWVhaaFUyTnlhWEIwSUMwZ1VtVmhZM1FpRFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnZEdGbmN5QWlWMlZpSWcwS0lDQWdJQ0FnSUNBZ0lDQWdmUTBLSUNBZ0lDQWdJQ0FnSUNBZ0RRb2dJQ0FnSUNBZ0lDQWdJQ0JoY0drZ1BTQmpiMjUwWVdsdVpYSWdJa0ZRU1NBdElFSmhZMnRsYm1RaUlDSkdiM0p1WldObElHOGdZOE96WkdsbmJ5QndjbWx1WTJsd1lXd3NJR0VnYk1PeloybGpZU0JrWlNCdVpXZkRzMk5wYnlCbElHZGxjc09xYm1OcFlTQmtZV1J2Y3lKN0RRb2dJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ2RHVmphRzV2Ykc5bmVTQWlVM0J5YVc1MElFSnZiM1FpRFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnZEdGbmN5QWlRVkJKSWcwS0lDQWdJQ0FnSUNBZ0lDQWdmUTBLSUNBZ0lDQWdJQ0FnSUNBZ0RRb2dJQ0FnSUNBZ0lDQWdJQ0JrWVhSaFltRnpaU0E5SUdOdmJuUmhhVzVsY2lBaVFtRnVZMjhnWkdVZ1JHRmtiM01pSUNKQmNtMWhlbVZ1WVNCa1lXUnZjeUJrYnlCd2NtOW5jbUZ0WVNBdElIVnpkY09oY21sdmN5d2daWFpsYm5SdmN5d2dabTkwYjNNc0lIRjFaWE4wYVc5dVlYSnBiM012Y21WemNHOXpkR0Z6SW5zTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCMFpXTm9ibTlzYjJkNUlDSlFiM04wWjNKbFUxRk1JZzBLSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJSFJoWjNNZ0lrUmhkR0ZpWVhObElnMEtJQ0FnSUNBZ0lDQWdJQ0FnZlEwS0lDQWdJQ0FnSUNCOURRb2dJQ0FnSUNBZ0lBMEtJQ0FnSUNBZ0lDQmtaWEJzYjNsdFpXNTBSVzUyYVhKdmJtMWxiblFnSWxCeWIyUjFZMkZ2SWlCN0RRb2dJQ0FnSUNBZ0lDQWdJQ0FOQ2lBZ0lDQWdJQ0FnSUNBZ0lHUmxjR3h2ZVcxbGJuUk9iMlJsSUNKVVlXSnNaWFFnWkc4Z1JYWmxiblJ2SWlBaVZXMGdkR0ZpYkdWMElFRnVaSEp2YVdRZ2JtOGdiRzlqWVd3Z1pHOGdaWFpsYm5SdklpQjdEUW9nSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdkR1ZqYUc1dmJHOW5lU0FpUVc1a2NtOXBaQ0JQVXlJTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCMFlXZHpJQ0pOYjJKcGJHVWdSR1YyYVdObElnMEtJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lHTnZiblJoYVc1bGNrbHVjM1JoYm1ObElHTmhZbWx1WlVScFoybDBZV3d1Ylc5aWFXeGxRWEJ3RFFvZ0lDQWdJQ0FnSUNBZ0lDQjlEUW9nSUNBZ0lDQWdJQ0FnSUNCa1pYQnNiM2x0Wlc1MFRtOWtaU0FpUTI5dGNIVjBZV1J2Y2lCa2J5QlZjM1hEb1hKcGJ5SWdJazhnYm1GMlpXZGhaRzl5SUhkbFlpQnVieUJqYjIxd2RYUmhaRzl5SUdSdklFOXlaMkZ1YVhwaFpHOXlJRzkxSUVGa2JXbHVJaUI3RFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnZEdWamFHNXZiRzluZVNBaVJHVnphM1J2Y0NCQ2NtOTNjMlZ5SWcwS0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUhSaFozTWdJbFZ6WlhJZ1JHVjJhV05sSWcwS0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUdOdmJuUmhhVzVsY2tsdWMzUmhibU5sSUdOaFltbHVaVVJwWjJsMFlXd3VkMlZpUVhCd0RRb2dJQ0FnSUNBZ0lDQWdJQ0I5RFFvZ0lDQWdJQ0FnSUNBZ0lDQmtaWEJzYjNsdFpXNTBUbTlrWlNBaVUyVnlkbWxrYjNJZ1pHVWdRWEJzYVdOaHc2ZkRvMjhpSUNKVFpYSjJhV1J2Y2lCdVlTQnVkWFpsYlNBb1pYZzZJRUZYVXl3Z1FYcDFjbVVwSUhGMVpTQnliMlJoSUdFZ2JNT3paMmxqWVNCa1pTQnVaV2ZEczJOcGJ5SWdldzBLSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJSFJsWTJodWIyeHZaM2tnSWxObGNuWnBaRzl5SUV4cGJuVjRJQ2hsZURvZ1ZXSjFiblIxS1NJTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCMFlXZHpJQ0pKYm1aeVlYTjBjblZqZEhWeVpTSU5DaUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQmpiMjUwWVdsdVpYSkpibk4wWVc1alpTQmpZV0pwYm1WRWFXZHBkR0ZzTG1Gd2FRMEtJQ0FnSUNBZ0lDQWdJQ0FnZlEwS0lDQWdJQ0FnSUNBZ0lDQWdaR1Z3Ykc5NWJXVnVkRTV2WkdVZ0lsTmxjblpwWkc5eUlHUmxJRUpoYm1OdklHUmxJRVJoWkc5eklpQWlVMlZ5ZG1uRHAyOGdaR1VnWW1GdVkyOGdaR1VnWkdGa2IzTWdaMlZ5Wlc1amFXRmtieUFvWlhnNklFRlhVeUJTUkZNcElpQjdEUW9nSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdkR1ZqYUc1dmJHOW5lU0FpVUc5emRHZHlaVk5SVENJTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCMFlXZHpJQ0pKYm1aeVlYTjBjblZqZEhWeVpTSU5DaUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQmpiMjUwWVdsdVpYSkpibk4wWVc1alpTQmpZV0pwYm1WRWFXZHBkR0ZzTG1SaGRHRmlZWE5sRFFvZ0lDQWdJQ0FnSUNBZ0lDQjlEUW9nSUNBZ0lDQWdJSDBOQ2cwS0lDQWdJQ0FnSUNCaFpHMXBiaUF0UGlCallXSnBibVZFYVdkcGRHRnNJQ0pCWkcxcGJtbHpkSEpoSUc4Z2MybHpkR1Z0WVNCbElIVnpkY09oY21sdmN5SU5DaUFnSUNBZ0lDQWdZMkZpYVc1bFJHbG5hWFJoYkNBdFBpQmxiV0ZwYkZONWMzUmxiU0FpUlc1MmFXRWdaUzF0WVdsc0tHWnZkRzhwSUhCaGNtRWdjR0Z5ZEdsamFYQmhiblJsSUhWellXNWtieUlOQ2lBZ0lDQWdJQ0FnRFFvZ0lDQWdJQ0FnSUc5eVoyRnVhWHBoWkc5eUlDMCtJR05oWW1sdVpVUnBaMmwwWVd3dWJXOWlhV3hsUVhCd0lDSnBibWxqYVdFZ1pYWmxiblJ2SWcwS0lDQWdJQ0FnSUNBTkNpQWdJQ0FnSUNBZ2NHRnlkR2xqYVhCaGJuUmxJQzArSUdOaFltbHVaVVJwWjJsMFlXd3ViVzlpYVd4bFFYQndJQ0pVYVhKaElHWnZkRzl6SUdVZ2NtVnpjRzl1WkdVZ2NYVmxjM1JwYjI3RG9YSnBieUJrZFhKaGJuUmxJRzhnWlhabGJuUnZJZzBLSUNBZ0lDQWdJQ0J2Y21kaGJtbDZZV1J2Y2lBdFBpQmpZV0pwYm1WRWFXZHBkR0ZzTG5kbFlrRndjQ0FpWjJWeVpXNWphV0VnWlhabGJuUnZJR1VnY1hWbGMzUnBiMjdEb1hKcGIzTWlEUW9nSUNBZ0lDQWdJR0ZrYldsdUlDMCtJR05oWW1sdVpVUnBaMmwwWVd3dWQyVmlRWEJ3SUNKblpYSmxibU5wWVNCbGRtVnVkRzl6SUdVZ2IzSm5ZVzVwZW1Ga2IzSmxjeUlOQ2lBZ0lDQWdJQ0FnRFFvZ0lDQWdJQ0FnSUdOaFltbHVaVVJwWjJsMFlXd3VkMlZpUVhCd0lDMCtJR05oWW1sdVpVUnBaMmwwWVd3dVlYQnBJQ0pHWVhvZ1kyaGhiV0ZrWVhNaURRb2dJQ0FnSUNBZ0lHTmhZbWx1WlVScFoybDBZV3d1Ylc5aWFXeGxRWEJ3SUMwK0lHTmhZbWx1WlVScFoybDBZV3d1WVhCcElDSkdZWG9nWTJoaGJXRmtZWE1pRFFvZ0lDQWdJQ0FnSUEwS0lDQWdJQ0FnSUNCallXSnBibVZFYVdkcGRHRnNMbUZ3YVNBdFBpQmhkWFJsYm5ScFkxVnpaWElnSW1GMWRHVnVkR2xqWVNCMWMzWERvWEpwYjNNaURRb2dJQ0FnSUNBZ0lHTmhZbWx1WlVScFoybDBZV3d1WVhCcElDMCtJR05oWW1sdVpVUnBaMmwwWVd3dVpHRjBZV0poYzJVZ0lrekRxaUJsSUdWelkzSmxkbVV2WVhKdFlYcGxibUVnWkdGa2IzTWlEUW9nSUNBZ0lDQWdJR05oWW1sdVpVUnBaMmwwWVd3dVlYQnBJQzArSUdWdFlXbHNVM2x6ZEdWdElDSkZiblpwWVNCbExXMWhhV3h6SUhCdmNpSU5DaUFnSUNBZ0lDQWdEUW9nSUNBZ0lDQWdJR1Z0WVdsc1UzbHpkR1Z0SUMwK0lIQmhjblJwWTJsd1lXNTBaU0FpUlc1MmFXRWdaUzF0WVdsc0lIQmhjbUVpRFFvZ0lDQWdJQ0FnSUEwS0lDQWdJQ0FnSUNBTkNpQWdJQ0FnSUNBZ0RRb2dJQ0FnZlEwS0RRb2dJQ0FnZG1sbGQzTWdldzBLSUNBZ0lDQWdJQ0JUZVhOMFpXMURiMjUwWlhoMElHTmhZbWx1WlVScFoybDBZV3dnSWtOdmJuUmxlSFJ2SWlBaVJHbGhaM0poYldFZ1F6UWdic090ZG1Wc0lERWdkWFJwYkdsNllXUnZJR052Ylc4Z1pYTjBkV1J2SUdSbElHTmhjMjhnYm1FZ1pHbHpZMmx3YkdsdVlTQkJjbkYxYVhSbGRIVnlZU0JrWlNCVGIyWjBkMkZ5WlM0Z0xTQlZSazFUSWlCN0RRb2dJQ0FnSUNBZ0lDQWdJQ0JwYm1Oc2RXUmxJQ29OQ2lBZ0lDQWdJQ0FnSUNBZ0lHRjFkRzlzWVhsdmRYUWdiSElOQ2lBZ0lDQWdJQ0FnZlEwS0RRb2dJQ0FnSUNBZ0lHTnZiblJoYVc1bGNpQmpZV0pwYm1WRWFXZHBkR0ZzSUNKRGIyNTBZV2x1WlhKeklpQWlSR2xoWjNKaGJXRWdRelFnYnNPdGRtVnNJRElnZFhScGJHbDZZV1J2SUdOdmJXOGdaWE4wZFdSdklHNWhJR1JwYzJOcGNHeHBibUVnUVhKeGRXbDBaWFIxY21FZ1pHVWdVMjltZEhkaGNtVWdMU0JWUmsxVElpQjdEUW9nSUNBZ0lDQWdJQ0FnSUNCcGJtTnNkV1JsSUNvTkNpQWdJQ0FnSUNBZ0lDQWdJR0YxZEc5c1lYbHZkWFFnYkhJTkNpQWdJQ0FnSUNBZ2ZRMEtJQ0FnSUNBZ0lDQU5DaUFnSUNBZ0lDQWdaR1Z3Ykc5NWJXVnVkQ0JqWVdKcGJtVkVhV2RwZEdGc0lDSlFjbTlrZFdOaGJ5SWdJa2x0Y0d4aGJuUmhZMkZ2SWlBaVJHbGhaM0poYldFZ1pHVWdTVzF3YkdGdWRHSERwOE9qYnlCa2J5QkROQ0J1dzYxMlpXd2dNeUF0SUcxdlpHOXpJR052Ylc4Z1kyOXVkTU9xYVc1bGNpQnliMlJoSUc1dklHRnRZbWxsYm5SbElHUmxJRkJ5YjJSMXc2ZkRvMjh1SWlCN0RRb2dJQ0FnSUNBZ0lDQWdJQ0JwYm1Oc2RXUmxJQ29OQ2lBZ0lDQWdJQ0FnSUNBZ0lHRjFkRzlzWVhsdmRYUWdkR0lnRFFvZ0lDQWdJQ0FnSUgwTkNnMEtJQ0FnSUNBZ0lDQnpkSGxzWlhNZ2V3MEtJQ0FnSUNBZ0lDQWdJQ0FnWld4bGJXVnVkQ0FpUld4bGJXVnVkQ0lnZXcwS0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUdOdmJHOXlJQ05tWm1abVptWU5DaUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQm1iMjUwVTJsNlpTQXlNZzBLSUNBZ0lDQWdJQ0FnSUNBZ2ZRMEtJQ0FnSUNBZ0lDQWdJQ0FnWld4bGJXVnVkQ0FpVUdWeWMyOXVJaUI3RFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnYzJoaGNHVWdVR1Z5YzI5dURRb2dJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ1ltRmphMmR5YjNWdVpDQWpNR0UyTUdabURRb2dJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ1kyOXNiM0lnSTJabVptWm1aZzBLSUNBZ0lDQWdJQ0FnSUNBZ2ZRMEtJQ0FnSUNBZ0lDQWdJQ0FnWld4bGJXVnVkQ0FpVTI5bWRIZGhjbVVnVTNsemRHVnRJaUI3RFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnWW1GamEyZHliM1Z1WkNBak1URTJPR0prRFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnWTI5c2IzSWdJMlptWm1abVpnMEtJQ0FnSUNBZ0lDQWdJQ0FnZlEwS0lDQWdJQ0FnSUNBZ0lDQWdaV3hsYldWdWRDQWlSWGgwWlhKdVlXd2lJSHNOQ2lBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0JpWVdOclozSnZkVzVrSUNNNU9UazVPVGtOQ2lBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0JqYjJ4dmNpQWpabVptWm1abURRb2dJQ0FnSUNBZ0lDQWdJQ0I5RFFvZ0lDQWdJQ0FnSUNBZ0lDQmxiR1Z0Wlc1MElDSkRiMjUwWVdsdVpYSWlJSHNOQ2lBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0JpWVdOclozSnZkVzVrSUNNME16aGtaRFVOQ2lBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0JqYjJ4dmNpQWpabVptWm1abURRb2dJQ0FnSUNBZ0lDQWdJQ0I5RFFvZ0lDQWdJQ0FnSUNBZ0lDQmxiR1Z0Wlc1MElDSkVZWFJoWW1GelpTSWdldzBLSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJSE5vWVhCbElFTjViR2x1WkdWeURRb2dJQ0FnSUNBZ0lDQWdJQ0I5RFFvZ0lDQWdJQ0FnSUNBZ0lDQnlaV3hoZEdsdmJuTm9hWEFnSWxKbGJHRjBhVzl1YzJocGNDSWdldzBLSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJSFJvYVdOcmJtVnpjeUF5RFFvZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnWTI5c2IzSWdJemMzTnpjM053MEtJQ0FnSUNBZ0lDQWdJQ0FnZlEwS0lDQWdJQ0FnSUNBZ0lDQWdaV3hsYldWdWRDQWlWMlZpSWlCN0RRb2dJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ2MyaGhjR1VnVjJWaVFuSnZkM05sY2cwS0lDQWdJQ0FnSUNBZ0lDQWdmUTBLSUNBZ0lDQWdJQ0FnSUNBZ1pXeGxiV1Z1ZENBaVRXOWlhV3hsSWlCN0RRb2dJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ2MyaGhjR1VnVFc5aWFXeGxSR1YyYVdObFVHOXlkSEpoYVhRTkNpQWdJQ0FnSUNBZ0lDQWdJSDBOQ2lBZ0lDQWdJQ0FnSUNBZ0lHVnNaVzFsYm5RZ0lrMXZZbWxzWlNCRVpYWnBZMlVpSUhzTkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCemFHRndaU0JOYjJKcGJHVkVaWFpwWTJWUWIzSjBjbUZwZEEwS0lDQWdJQ0FnSUNBZ0lDQWdmUTBLSUNBZ0lDQWdJQ0FnSUNBZ1pXeGxiV1Z1ZENBaVZYTmxjaUJFWlhacFkyVWlJSHNOQ2lBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0J6YUdGd1pTQlhaV0pDY205M2MyVnlEUW9nSUNBZ0lDQWdJQ0FnSUNCOURRb2dJQ0FnSUNBZ0lDQWdJQ0JsYkdWdFpXNTBJQ0pKYm1aeVlYTjBjblZqZEhWeVpTSWdldzBLSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJSE5vWVhCbElFaGxlR0ZuYjI0TkNpQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNCaVlXTnJaM0p2ZFc1a0lDTXlNekpHTTBVTkNpQWdJQ0FnSUNBZ0lDQWdJSDBOQ2lBZ0lDQWdJQ0FnZlEwS0lDQWdJSDBOQ2cwS2ZRPT0ifSwidmlld3MiOnsiY29uZmlndXJhdGlvbiI6eyJicmFuZGluZyI6e30sInN0eWxlcyI6eyJlbGVtZW50cyI6W3siYmFja2dyb3VuZCI6IiM0MzhkZDUiLCJjb2xvciI6IiNmZmZmZmYiLCJ0YWciOiJDb250YWluZXIifSx7InNoYXBlIjoiQ3lsaW5kZXIiLCJ0YWciOiJEYXRhYmFzZSJ9LHsiY29sb3IiOiIjZmZmZmZmIiwiZm9udFNpemUiOjIyLCJ0YWciOiJFbGVtZW50In0seyJiYWNrZ3JvdW5kIjoiIzk5OTk5OSIsImNvbG9yIjoiI2ZmZmZmZiIsInRhZyI6IkV4dGVybmFsIn0seyJiYWNrZ3JvdW5kIjoiIzIzMmYzZSIsInNoYXBlIjoiSGV4YWdvbiIsInRhZyI6IkluZnJhc3RydWN0dXJlIn0seyJzaGFwZSI6Ik1vYmlsZURldmljZVBvcnRyYWl0IiwidGFnIjoiTW9iaWxlIn0seyJzaGFwZSI6Ik1vYmlsZURldmljZVBvcnRyYWl0IiwidGFnIjoiTW9iaWxlIERldmljZSJ9LHsiYmFja2dyb3VuZCI6IiMwYTYwZmYiLCJjb2xvciI6IiNmZmZmZmYiLCJzaGFwZSI6IlBlcnNvbiIsInRhZyI6IlBlcnNvbiJ9LHsiYmFja2dyb3VuZCI6IiMxMTY4YmQiLCJjb2xvciI6IiNmZmZmZmYiLCJ0YWciOiJTb2Z0d2FyZSBTeXN0ZW0ifSx7InNoYXBlIjoiV2ViQnJvd3NlciIsInRhZyI6IlVzZXIgRGV2aWNlIn0seyJzaGFwZSI6IldlYkJyb3dzZXIiLCJ0YWciOiJXZWIifV0sInJlbGF0aW9uc2hpcHMiOlt7ImNvbG9yIjoiIzc3Nzc3NyIsInRhZyI6IlJlbGF0aW9uc2hpcCIsInRoaWNrbmVzcyI6Mn1dfSwidGVybWlub2xvZ3kiOnt9fSwiY29udGFpbmVyVmlld3MiOlt7ImF1dG9tYXRpY0xheW91dCI6eyJhcHBsaWVkIjpmYWxzZSwiZWRnZVNlcGFyYXRpb24iOjAsImltcGxlbWVudGF0aW9uIjoiR3JhcGh2aXoiLCJub2RlU2VwYXJhdGlvbiI6MzAwLCJyYW5rRGlyZWN0aW9uIjoiTGVmdFJpZ2h0IiwicmFua1NlcGFyYXRpb24iOjMwMCwidmVydGljZXMiOmZhbHNlfSwiZGVzY3JpcHRpb24iOiJEaWFncmFtYSBDNCBuw612ZWwgMiB1dGlsaXphZG8gY29tbyBlc3R1ZG8gbmEgZGlzY2lwbGluYSBBcnF1aXRldHVyYSBkZSBTb2Z0d2FyZSAtIFVGTVMiLCJlbGVtZW50cyI6W3siaWQiOiIxIiwieCI6MCwieSI6MH0seyJpZCI6IjIiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMyIsIngiOjAsInkiOjB9LHsiaWQiOiI0IiwieCI6MCwieSI6MH0seyJpZCI6IjUiLCJ4IjowLCJ5IjowfSx7ImlkIjoiNyIsIngiOjAsInkiOjB9LHsiaWQiOiI4IiwieCI6MCwieSI6MH0seyJpZCI6IjkiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTAiLCJ4IjowLCJ5IjowfV0sImV4dGVybmFsU29mdHdhcmVTeXN0ZW1Cb3VuZGFyaWVzVmlzaWJsZSI6ZmFsc2UsImtleSI6IkNvbnRhaW5lcnMiLCJuYW1lIjoiQ29udGFpbmVyIFZpZXc6IFNpc3RlbWEgQ2FiaW5lIERpZ2l0YWwgVUZNUyIsIm9yZGVyIjoyLCJyZWxhdGlvbnNoaXBzIjpbeyJpZCI6IjIxIn0seyJpZCI6IjIzIn0seyJpZCI6IjI1In0seyJpZCI6IjI2In0seyJpZCI6IjI3In0seyJpZCI6IjI4In0seyJpZCI6IjI5In0seyJpZCI6IjMxIn0seyJpZCI6IjMyIn0seyJpZCI6IjMzIn1dLCJzb2Z0d2FyZVN5c3RlbUlkIjoiNiJ9XSwiZGVwbG95bWVudFZpZXdzIjpbeyJhdXRvbWF0aWNMYXlvdXQiOnsiYXBwbGllZCI6ZmFsc2UsImVkZ2VTZXBhcmF0aW9uIjowLCJpbXBsZW1lbnRhdGlvbiI6IkdyYXBodml6Iiwibm9kZVNlcGFyYXRpb24iOjMwMCwicmFua0RpcmVjdGlvbiI6IlRvcEJvdHRvbSIsInJhbmtTZXBhcmF0aW9uIjozMDAsInZlcnRpY2VzIjpmYWxzZX0sImRlc2NyaXB0aW9uIjoiRGlhZ3JhbWEgZGUgSW1wbGFudGHDp8OjbyBkbyBDNCBuw612ZWwgMyAtIG1vZG9zIGNvbW8gY29udMOqaW5lciByb2RhIG5vIGFtYmllbnRlIGRlIFByb2R1w6fDo28uIiwiZWxlbWVudHMiOlt7ImlkIjoiMTEiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTIiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTMiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTQiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTUiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTYiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTciLCJ4IjowLCJ5IjowfSx7ImlkIjoiMTgiLCJ4IjowLCJ5IjowfV0sImVudmlyb25tZW50IjoiUHJvZHVjYW8iLCJrZXkiOiJJbXBsYW50YWNhbyIsIm5hbWUiOiJEZXBsb3ltZW50IFZpZXc6IFNpc3RlbWEgQ2FiaW5lIERpZ2l0YWwgVUZNUyAtIFByb2R1Y2FvIiwib3JkZXIiOjMsInNvZnR3YXJlU3lzdGVtSWQiOiI2In1dLCJzeXN0ZW1Db250ZXh0Vmlld3MiOlt7ImF1dG9tYXRpY0xheW91dCI6eyJhcHBsaWVkIjpmYWxzZSwiZWRnZVNlcGFyYXRpb24iOjAsImltcGxlbWVudGF0aW9uIjoiR3JhcGh2aXoiLCJub2RlU2VwYXJhdGlvbiI6MzAwLCJyYW5rRGlyZWN0aW9uIjoiTGVmdFJpZ2h0IiwicmFua1NlcGFyYXRpb24iOjMwMCwidmVydGljZXMiOmZhbHNlfSwiZGVzY3JpcHRpb24iOiJEaWFncmFtYSBDNCBuw612ZWwgMSB1dGlsaXphZG8gY29tbyBlc3R1ZG8gZGUgY2FzbyBuYSBkaXNjaXBsaW5hIEFycXVpdGV0dXJhIGRlIFNvZnR3YXJlLiAtIFVGTVMiLCJlbGVtZW50cyI6W3siaWQiOiIxIiwieCI6MCwieSI6MH0seyJpZCI6IjIiLCJ4IjowLCJ5IjowfSx7ImlkIjoiMyIsIngiOjAsInkiOjB9LHsiaWQiOiI0IiwieCI6MCwieSI6MH0seyJpZCI6IjUiLCJ4IjowLCJ5IjowfSx7ImlkIjoiNiIsIngiOjAsInkiOjB9XSwiZW50ZXJwcmlzZUJvdW5kYXJ5VmlzaWJsZSI6dHJ1ZSwia2V5IjoiQ29udGV4dG8iLCJuYW1lIjoiU3lzdGVtIENvbnRleHQgVmlldzogU2lzdGVtYSBDYWJpbmUgRGlnaXRhbCBVRk1TIiwib3JkZXIiOjEsInJlbGF0aW9uc2hpcHMiOlt7ImlkIjoiMTkifSx7ImlkIjoiMjAifSx7ImlkIjoiMjIifSx7ImlkIjoiMjQifSx7ImlkIjoiMzAifSx7ImlkIjoiMzMifV0sInNvZnR3YXJlU3lzdGVtSWQiOiI2In1dfX0=';
+    var json;
+    if (jsonAsString.length > 0) {
+        json = JSON.parse(decodeBase64(jsonAsString));
+
+        if (json.ciphertext && json.encryptionStrategy) {
+            showPassphraseModalAndDecryptWorkspace(json, loadWorkspace);
+        } else {
+            loadWorkspace(json);
+        }
+    }
+
+    function decodeBase64(str) {
+        return decodeURIComponent(atob(str).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    }
+</script>
+    </div>
+
+    
+
+    <script nonce="">
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+            logError(msg, url, lineNo, error);
+        };
+
+        function logError(msg, url, lineNo, error) {
+            console.log(msg);
+            console.log(url);
+            console.log(lineNo);
+            console.log(error);
+        }
+
+        $('#renderingModeLightLink').click(function(event) {
+            event.preventDefault();
+            structurizr.ui.setRenderingMode(structurizr.ui.RENDERING_MODE_LIGHT);
+        });
+
+        $('#renderingModeDarkLink').click(function(event) {
+            event.preventDefault();
+            structurizr.ui.setRenderingMode(structurizr.ui.RENDERING_MODE_DARK);
+        });
+
+        $('#renderingModeSystemLink').click(function(event) {
+            event.preventDefault();
+            structurizr.ui.setRenderingMode(structurizr.ui.RENDERING_MODE_SYSTEM);
+        });
+    </script>
+
+    <script defer="" src="./implantacao_Structurizr - DSL_files/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" nonce="" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c115d2816ff24d00a43ee621f1a52e82&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+</body></html>
